@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>学习使用Emmet插件加快前端开发</title>
+	<style>
+		body {
+			font: 13pt Arial, sans-serif;
+			color: #555;
+		}
+		.section {
+			background: rgb(234, 239, 215);
+		}
+	</style>
+</head>
+<body>
+	<section class="section">
+		感谢课程 <a href="http://www.gbtags.com/gb/gbliblist/3.htm">前端开发利器 - Emmet (Zen Coding)</a>
+	</section>
+	<p>1.输入ul>li{第$$行}*5 然后按tab键</p>
+	<section class="section">
+		<ul>
+			<li>第01行</li>
+			<li>第02行</li>
+			<li>第03行</li>
+			<li>第04行</li>
+			<li>第05行</li>
+		</ul>
+	</section>
+	<p>2.快速生成html标签，比如输入svg，然后按tab</p>
+	<section class="section">
+		<svg>
+			<path d="M 0,0 L 100,100" stroke="orange" stroke-width="5"/>
+		</svg>
+	</section>
+	<p>3.生成子元素，比如输入div>ul>li,然后按tab</p>
+	<section class="section">
+		<div>
+			<ul>
+				<li>啦啦</li>
+			</ul>
+		</div>
+	</section>
+	<p>4.生成同级元素，比如输入div+p+strong</p>
+	<section class="section">
+		<div>我</div>
+		<p>爱</p>
+		<strong>祖国</strong>
+	</section>
+	<p>5.返回父级元素来添加新元素，使用^实现。返回一层父级元素用用一个^，比如：div>p>span+em^bq；两层父级元素，用两个^^，比如div>p>span+em^^bq……</p>
+	<section class="section">
+		<div>
+			<p><span>我</span><em>是</em></p>
+			<blockquote>引号</blockquote>
+		</div>
+		<div>
+			<p><span>我</span><em>是</em></p>
+		</div>
+		<blockquote>中国人</blockquote>
+	</section>
+	<p>6.生成重复元素。比如输入div*5</p>
+	<section class="section">
+		<div>我是第一个</div>
+		<div>我是第二个</div>
+		<div>我是第三个</div>
+		<div>我是第四个</div>
+		<div>我是第五个</div>
+	</section>
+
+	<p>7.使用括号()，生成复杂的组合。比如，div>(header>ul>li*2>a)+footer>p</p>
+	<section class="section">
+		<div>
+			<header>
+				<ul>
+					<li><a href="">链接1</a></li>
+					<li><a href="">链接2</a></li>
+				</ul>
+			</header>
+			<footer>
+				<p>底部标题</p>
+			</footer>
+		</div>
+	</section>
+
+	<p>8.Emmet属性操作符之id和class。例如，div.page,div.class1.class2,div#footer.class</p>
+	<section class="section">
+		<div class="page" id="page">
+			div.page#page
+		</div>
+	</section>
+
+	<p>9.Emmet属性操作符之自定义属性。例如，td[title=hello colspan=3]</p>
+	<section class="section">
+		<td title="hello" colspan="3">td[title=hello colspan=3]</td>
+		<td title="hello world" colspan="3">td[title="hello world" colspan="3"]</td>
+	</section>
+
+	<p>10.自动生成编码。例如，ul>li.item$*10。其中，$相当于编号占位符。如果想要生成多位的数字编号，可以组合使用多个$符号</p>
+	<section class="section">
+		<ul>
+			<li class="item1"></li>
+			<li class="item2"></li>
+			<li class="item3"></li>
+			<li class="item4"></li>
+			<li class="item5"></li>
+			<li class="item6"></li>
+			<li class="item7"></li>
+			<li class="item8"></li>
+			<li class="item9"></li>
+			<li class="item10"></li>
+		</ul>
+	</section>
+
+	<p>11.生成反向编号元素和指定编号开始的元素</p>
+	<section class="section">
+		ul>li.item$@-*5
+		<ul>
+			<li class="item5"></li>
+			<li class="item4"></li>
+			<li class="item3"></li>
+			<li class="item2"></li>
+			<li class="item1"></li>
+		</ul>
+		ul>li.item$@3*5
+		<ul>
+			<li class="item3"></li>
+			<li class="item4"></li>
+			<li class="item5"></li>
+			<li class="item6"></li>
+			<li class="item7"></li>
+		</ul>
+		ul>li.item$@-3*5
+		<ul>
+			<li class="item7"></li>
+			<li class="item6"></li>
+			<li class="item5"></li>
+			<li class="item4"></li>
+			<li class="item3"></li>
+		</ul>
+	</section>
+	<p>12.生成占位符文字</p>
+	<section class="section">
+		lorem按tab
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error vitae corporis, at unde necessitatibus. Iusto molestiae rerum dolorum eum maiores nemo, quibusdam ipsa praesentium tenetur. Amet ullam, adipisci veniam expedita?
+		lipsum按tab
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, odit incidunt quis itaque nisi in sequi corrupti, dignissimos aperiam! Labore ea pariatur omnis iusto quos, reiciendis enim repudiandae est aut?
+		p*4>lorem 按tab
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis sunt, veniam. Iure quaerat, fuga aut, obcaecati eos ex, fugit quis dignissimos laudantium voluptas voluptatibus tempora esse eligendi alias saepe consequatur.</p>
+		<p>Sapiente deserunt et quibusdam dolore perspiciatis facilis, veritatis repellendus corporis! Eum officiis voluptatum ipsa saepe. Cum inventore animi eius esse quaerat, officiis eveniet libero omnis aliquam explicabo deserunt vel ratione.</p>
+		<p>Quidem fugiat quos mollitia, cupiditate quis quod et dicta, suscipit at ut officiis illum autem neque totam fugit culpa voluptatum beatae nemo iusto dignissimos libero. Eius maiores ex odio ea!</p>
+		<p>Quam amet maiores ex tempore laudantium optio debitis quasi dolorem repellat perferendis quis quas recusandae, aliquam quo, accusamus rem magni in? Delectus, maxime! Fuga, laudantium incidunt quo ab omnis sequi.</p>
+	</section>
+	<p>13.生成针对不同浏览器带有特定前缀的CSS。</p>
+	<section class="section">
+		-bdrs按tab键
+		@kf
+		<style>
+			-webkit-border-radius: 5px;
+			-moz-border-radius: 5px;
+			-ms-border-radius: 5px;
+			-o-border-radius: 5px;
+			border-radius: 5px;
+
+			@-webkit-keyframes identifier {
+				from {  }
+				to {  }
+			}
+			@-o-keyframes identifier {
+				from {  }
+				to {  }
+			}
+			@-moz-keyframes identifier {
+				from {  }
+				to {  }
+			}
+			@keyframes identifier {
+				from {  }
+				to {  }
+			}
+		</style>
+	</section>
+	<p>14.标签模糊输入</p>
+	<section class="section">
+		div.wrap>div.content
+		<div class="wrap">
+			<div class="content">div.wrap>div.content</div>
+		</div>
+		等价于.wrap>.content
+		<div class="wrap">
+			<div class="content">.wrap>.content</div>
+		</div>
+		em>span.info
+		<em><span class="info">em>span.info</span></em>
+		等价于em>.info
+		<em><span class="info">em>.info</span></em>
+		ul>li.item*3 等价于 ul>.item*3
+		<ul>
+			<li class="item"></li>
+			<li class="item"></li>
+			<li class="item"></li>
+		</ul>
+		table>#row$*4>[colspan=2] 等价于 table>tr#row$*4>td[colspan=2]
+		<table>
+			<tr id="row1">
+				<td colspan="2"></td>
+			</tr>
+			<tr id="row2">
+				<td colspan="2"></td>
+			</tr>
+			<tr id="row3">
+				<td colspan="2"></td>
+			</tr>
+			<tr id="row4">
+				<td colspan="2"></td>
+			</tr>
+		</table>
+	</section>
+</body>
+</html>
